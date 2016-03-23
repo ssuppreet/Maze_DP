@@ -13,13 +13,14 @@ public class MAZE
 		int x=0;
 		int a[][];
 		
+		//MAZE CONSTRUCTION
 		public void makeMaze()
 		{
-			System.out.println("Initiating construction!!");
+			//System.out.println("Initiating construction!!");
 			try
 			{
 				arr=new ArrayList<Integer>();
-				FileReader in = new FileReader("C:/Users/Kulkarni/Desktop/dp/CreateMaze.txt");
+				FileReader in = new FileReader("CreateMaze.txt");   //REWRITE THE CREATE MAZE PATH
 				BufferedReader br = new BufferedReader(in);
 				String line = null;
 				while ((line = br.readLine()) != null) 
@@ -56,16 +57,16 @@ public class MAZE
 		
 		
 		
-		
+		//TRAVERSE MAZE
 		public void travMaze()
 		{
-			System.out.println("Entered for traversing!!");
+			//System.out.println("Entered for traversing!!");
 			try
 			{	
-				File f=new File("C:/Users/Kulkarni/Desktop/dp/Output.txt");
+				File f=new File("Destination.txt");    //OUTPUT OF TRAVERSING
 				FileWriter fout=new FileWriter(f);
 				BufferedWriter bb=new BufferedWriter(fout);
-				FileReader in = new FileReader("C:/Users/Kulkarni/Desktop/dp/TraverseMaze.txt");
+				FileReader in = new FileReader("TraverseMaze.txt");	//PATH FOR TRAVERSE MAZE FILE
 				BufferedReader br = new BufferedReader(in);
 				String line = null;
 				int j;
@@ -93,7 +94,7 @@ public class MAZE
 						}
 						i++;
 					}
-					System.out.println("After traversing row"+i+" you reached room "+x);
+					//System.out.println("After traversing row"+i+" you reached room "+x);
 					
 					bb.write(new Integer(x).toString());
 					bb.newLine();
